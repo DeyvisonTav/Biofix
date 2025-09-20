@@ -47,7 +47,8 @@ export function About() {
               </motion.div>
             </div>
             
-            <motion.button 
+            <motion.button
+              onClick={() => window.open('https://www.instagram.com/biofixengenhariahospitalar/', '_blank')}
               className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors shadow-lg"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
@@ -72,14 +73,24 @@ export function About() {
               >
                 {/* Team photo placeholder */}
                 <div className="aspect-video bg-gradient-to-br from-slate-50 to-teal-50 rounded-xl mb-6 flex items-center justify-center relative overflow-hidden">
-                  <div className="text-center">
-                    <div className="w-20 h-20 mx-auto mb-4 bg-teal-600 rounded-full flex items-center justify-center">
+                  {/* Imagem da equipe como fundo */}
+                  <img
+                    src="/images/equipe.png"
+                    alt="Equipe Técnica Especializada da Biofix"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+
+                  {/* Overlay escuro para melhor legibilidade do texto */}
+                  <div className="absolute inset-0 bg-black/40"></div>
+
+                  <div className="text-center relative z-10">
+                    <div className="w-20 h-20 mx-auto mb-4 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/30">
                       <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                       </svg>
                     </div>
-                    <p className="text-slate-700 font-semibold">Equipe Técnica Especializada</p>
-                    <p className="text-slate-500 text-sm">Engenheiros Clínicos Certificados</p>
+                    <p className="text-white font-semibold text-shadow-sm">Equipe Técnica Especializada</p>
+                    <p className="text-white/90 text-sm">Engenheiros Clínicos Certificados</p>
                   </div>
                   
                   {/* Professional badge */}

@@ -74,7 +74,8 @@ export function Footer() {
               ].map((item, index) => (
                 <li key={item}>
                   <motion.a
-                    href="#"
+                    href={item === 'Nossa Equipe' ? 'https://www.instagram.com/biofixengenhariahospitalar/' : '#'}
+                    target={item === 'Nossa Equipe' ? '_blank' : undefined}
                     className="text-gray-400 hover:text-white transition-colors"
                     whileHover={{ x: 5 }}
                     initial={{ opacity: 0, x: -10 }}
@@ -102,7 +103,7 @@ export function Footer() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 </div>
-                <span className="text-gray-400 text-sm sm:text-base">(81) 3656-1030</span>
+                <span className="text-gray-400 text-sm sm:text-base">(81) 99511-6801</span>
               </div>
 
               <div className="flex items-start space-x-2 sm:space-x-3">
@@ -111,7 +112,7 @@ export function Footer() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
                   </svg>
                 </div>
-                <span className="text-gray-400 text-xs sm:text-sm break-all overflow-wrap-anywhere">atendimento@inoveecontabilidade.com</span>
+                <span className="text-gray-400 text-xs sm:text-sm break-all overflow-wrap-anywhere">biofixengenhariahospitalar@gmail.com</span>
               </div>
 
               <div className="flex items-start space-x-2 sm:space-x-3">

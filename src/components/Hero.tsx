@@ -1,5 +1,13 @@
 import { motion } from 'framer-motion';
 
+const WHATSAPP_NUMBER = '5581995116801';
+
+const openWhatsApp = (message: string) => {
+  const encodedMessage = encodeURIComponent(message);
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+  window.open(whatsappUrl, '_blank');
+};
+
 export function Hero() {
   return (
     <section className="min-h-screen relative overflow-hidden">
@@ -59,6 +67,7 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               <motion.button
+                onClick={() => document.getElementById('servicos')?.scrollIntoView({ behavior: 'smooth' })}
                 className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-colors shadow-lg"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
@@ -67,6 +76,7 @@ export function Hero() {
               </motion.button>
 
               <motion.button
+                onClick={() => openWhatsApp('Olá! Gostaria de solicitar um orçamento para locação e manutenção de equipamentos médicos e climatização.')}
                 className="border-2 border-slate-300 text-slate-300 px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-slate-300 hover:text-slate-800 transition-colors"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
@@ -82,24 +92,23 @@ export function Hero() {
             animate={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            {/* Medical Equipment Image Placeholder */}
+            {/* Medical Equipment Image */}
             <div className="relative">
               <motion.div
                 className="bg-gradient-to-br from-slate-100 to-white rounded-2xl p-4 sm:p-6 lg:p-8 shadow-2xl"
                 whileHover={{ y: -5 }}
                 transition={{ duration: 0.3 }}
               >
-                {/* Placeholder for medical equipment image */}
-                <div className="aspect-square bg-gradient-to-br from-blue-50 to-teal-50 rounded-xl mb-6 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-600 to-teal-600 rounded-full flex items-center justify-center">
-                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                      </svg>
-                    </div>
-                    <p className="text-slate-600 font-medium">Equipamentos Médicos</p>
-                    <p className="text-slate-500 text-sm">Manutenção Especializada</p>
-                  </div>
+                {/* Medical equipment image */}
+                <div className="aspect-square bg-gradient-to-br from-slate-100 to-white rounded-xl mb-6 flex items-center justify-center relative overflow-hidden border border-slate-200 shadow-inner">
+                  <img
+                    src="/images/logo.png"
+                    alt="BIOFIX - Engenharia Hospitalar"
+                    className="w-full h-full object-contain p-6"
+                  />
+
+                  {/* Subtle overlay for better visual integration */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-50/30 to-transparent rounded-xl"></div>
                 </div>
 
                 <div className="space-y-4">
